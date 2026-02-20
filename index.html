@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Rainfall Prediction</title>
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: linear-gradient(120deg, #89f7fe, #66a6ff);
+        min-height: 100vh;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .container {
+        background: #ffffff;
+        width: 700px;
+        padding: 30px 40px;
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      }
+
+      h1 {
+        text-align: center;
+        margin-bottom: 10px;
+        color: #333;
+      }
+
+      p.subtitle {
+        text-align: center;
+        color: #666;
+        margin-bottom: 30px;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px 20px;
+      }
+
+      .field {
+        display: flex;
+        flex-direction: column;
+      }
+
+      label {
+        font-size: 14px;
+        margin-bottom: 5px;
+        color: #333;
+      }
+
+      input {
+        padding: 10px;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+        font-size: 14px;
+      }
+
+      input:focus {
+        outline: none;
+        border-color: #66a6ff;
+      }
+
+      .btn {
+        margin-top: 30px;
+        width: 100%;
+        padding: 12px;
+        background: #66a6ff;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+
+      .btn:hover {
+        background: #4e8cff;
+      }
+
+      .footer {
+        text-align: center;
+        margin-top: 20px;
+        font-size: 12px;
+        color: #888;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>🌦 Rainfall Prediction</h1>
+      <p class="subtitle">
+        Enter weather parameters to predict tomorrow's rainfall
+      </p>
+
+      <form action="/predict" method="post">
+        <div class="grid">
+          <div class="field">
+            <label>Min Temperature (°C)</label>
+            <input type="number" step="any" name="MinTemp" />
+          </div>
+
+          <div class="field">
+            <label>Max Temperature (°C)</label>
+            <input type="number" step="any" name="MaxTemp" />
+          </div>
+
+          <div class="field">
+            <label>Rainfall (mm)</label>
+            <input type="number" step="any" name="Rainfall" />
+          </div>
+
+          <div class="field">
+            <label>Evaporation</label>
+            <input type="number" step="any" name="Evaporation" />
+          </div>
+
+          <div class="field">
+            <label>Sunshine (hrs)</label>
+            <input type="number" step="any" name="Sunshine" />
+          </div>
+
+          <div class="field">
+            <label>Wind Gust Speed</label>
+            <input type="number" step="any" name="WindGustSpeed" />
+          </div>
+
+          <div class="field">
+            <label>Wind Speed 9am</label>
+            <input type="number" step="any" name="WindSpeed9am" />
+          </div>
+
+          <div class="field">
+            <label>Wind Speed 3pm</label>
+            <input type="number" step="any" name="WindSpeed3pm" />
+          </div>
+
+          <div class="field">
+            <label>Humidity 9am (%)</label>
+            <input type="number" step="any" name="Humidity9am" />
+          </div>
+
+          <div class="field">
+            <label>Humidity 3pm (%)</label>
+            <input type="number" step="any" name="Humidity3pm" />
+          </div>
+
+          <div class="field">
+            <label>Pressure 9am</label>
+            <input type="number" step="any" name="Pressure9am" />
+          </div>
+
+          <div class="field">
+            <label>Pressure 3pm</label>
+            <input type="number" step="any" name="Pressure3pm" />
+          </div>
+
+          <div class="field">
+            <label>Cloud 9am</label>
+            <input type="number" step="any" name="Cloud9am" />
+          </div>
+
+          <div class="field">
+            <label>Cloud 3pm</label>
+            <input type="number" step="any" name="Cloud3pm" />
+          </div>
+
+          <div class="field">
+            <label>Temp 9am</label>
+            <input type="number" step="any" name="Temp9am" />
+          </div>
+
+          <div class="field">
+            <label>Temp 3pm</label>
+            <input type="number" step="any" name="Temp3pm" />
+          </div>
+        </div>
+
+        <button class="btn" type="submit">🔍 Predict Rainfall</button>
+      </form>
+
+      <div class="footer">
+        Machine Learning based Rainfall Prediction System
+      </div>
+    </div>
+  </body>
+</html>
